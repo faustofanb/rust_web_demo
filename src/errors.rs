@@ -10,7 +10,10 @@ use thiserror::Error;
 pub enum AppError {
     #[error("数据库错误: {0}")]
     Database(#[from] sqlx::Error),
-    
+
+    #[error("数据库迁移错误: {0}")]
+    Migration(#[from] sqlx::migrate::MigrateError),
+
     #[error("配置错误: {0}")]
     Config(#[from] config::ConfigError),
     
@@ -47,6 +50,7 @@ impl IntoResponse for AppError {
             AppError::InsufficientPermissions => (StatusCode::FORBIDDEN, "权限不足"),
             AppError::Validation(_) => (StatusCode::BAD_REQUEST, "请求参数验证失败"),
             AppError::Database(_) => (StatusCode::INTERNAL_SERVER_ERROR, "数据库操作失败"),
+            AppError::Migration(_) => (StatusCode::INTERNAL_SERVER_ERROR, "数据库迁移失败"),
             AppError::Config(_) => (StatusCode::INTERNAL_SERVER_ERROR, "配置错误"),
             AppError::Redis(_) => (StatusCode::INTERNAL_SERVER_ERROR, "缓存服务错误"),
             AppError::Jwt(_) => (StatusCode::UNAUTHORIZED, "Token验证失败"),
