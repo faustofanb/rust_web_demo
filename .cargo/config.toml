@@ -1,0 +1,28 @@
+# 使用中科大镜像源
+[source.crates-io]
+replace-with = 'ustc'
+
+[source.ustc]
+registry = "https://mirrors.ustc.edu.cn/crates.io-index"
+
+# 备用镜像源配置（可选）
+# 清华大学镜像
+[source.tuna]
+registry = "https://mirrors.tuna.tsinghua.edu.cn/crates.io-index"
+
+# 字节跳动镜像
+[source.rsproxy]
+registry = "https://rsproxy.cn/crates.io-index"
+
+# 上海交通大学镜像
+[source.sjtu]
+registry = "https://mirrors.sjtug.sjtu.edu.cn/crates.io-index"
+
+# 配置 git 依赖的镜像
+# [source."https://github.com/rust-lang/crates.io-index"]
+# replace-with = "ustc"
+
+# 网络配置
+[net]
+# 如果遇到网络问题，可以取消注释下面的行
+git-fetch-with-cli = true

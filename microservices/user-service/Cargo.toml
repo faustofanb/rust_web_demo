@@ -1,0 +1,36 @@
+[package]
+name = "user-service"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Web框架
+axum = "0.7"
+tokio = { version = "1.0", features = ["full"] }
+
+# 数据库
+sqlx = { version = "0.7", features = ["mysql", "runtime-tokio-rustls", "macros", "pool"] }
+
+# 共享库
+shared = { path = "../shared" }
+
+# 序列化
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# 错误处理
+anyhow = "1.0"
+thiserror = "1.0"
+
+# 验证
+validator = { version = "0.18", features = ["derive"] }
+
+# 时间处理
+chrono = { version = "0.4", features = ["serde"] }
+
+# UUID
+uuid = { version = "1.0", features = ["v4", "serde"] }
+
+# 中间件
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors", "trace"] }
