@@ -1,0 +1,11 @@
+/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/url-6a63f23c1fb8f61f.d: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/lib.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/host.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/origin.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/parser.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/path_segments.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/slicing.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/quirks.rs
+
+/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/liburl-6a63f23c1fb8f61f.rmeta: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/lib.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/host.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/origin.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/parser.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/path_segments.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/slicing.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/quirks.rs
+
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/lib.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/host.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/origin.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/parser.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/path_segments.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/slicing.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/url-2.5.7/src/quirks.rs:

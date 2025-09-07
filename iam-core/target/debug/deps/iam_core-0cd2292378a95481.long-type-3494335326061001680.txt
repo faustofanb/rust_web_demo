@@ -1,0 +1,2 @@
+fn(axum::extract::State<AppState>) -> impl std::future::Future<Output = Result<axum::Json<LoginResponse>, AppError>> {refresh_token}
+fn(axum::extract::State<AppState>) -> impl std::future::Future<Output = Result<axum::Json<LoginResponse>, AppError>> {refresh_token}: Handler<_, _>

@@ -1,0 +1,2 @@
+fn(axum::extract::State<AppState>) -> impl std::future::Future<Output = Result<axum::Json<Vec<UserResponse>>, AppError>> {list_users}
+fn(axum::extract::State<AppState>) -> impl std::future::Future<Output = Result<axum::Json<Vec<UserResponse>>, AppError>> {list_users}: Handler<_, _>

@@ -1,0 +1,11 @@
+/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/powerfmt-f7d8ce58861253bf.d: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/lib.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/buf.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/ext.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/smart_display.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/smart_display_impls.rs
+
+/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/libpowerfmt-f7d8ce58861253bf.rlib: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/lib.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/buf.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/ext.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/smart_display.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/smart_display_impls.rs
+
+/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/libpowerfmt-f7d8ce58861253bf.rmeta: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/lib.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/buf.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/ext.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/smart_display.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/smart_display_impls.rs
+
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/lib.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/buf.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/ext.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/smart_display.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/powerfmt-0.2.0/src/smart_display_impls.rs:

@@ -1,0 +1,11 @@
+/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/aliasable-8c85d087d97def13.d: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/lib.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/mut_ref.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/boxed.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/string.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/vec.rs
+
+/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/libaliasable-8c85d087d97def13.rlib: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/lib.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/mut_ref.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/boxed.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/string.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/vec.rs
+
+/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/libaliasable-8c85d087d97def13.rmeta: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/lib.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/mut_ref.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/boxed.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/string.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/vec.rs
+
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/lib.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/mut_ref.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/boxed.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/string.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/aliasable-0.1.3/src/vec.rs:

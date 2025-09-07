@@ -1,0 +1,11 @@
+/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/sqlx-1572dc1afd300a27.d: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/lib.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/any/mod.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/macros/mod.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/ty_match.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/lib.md /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/macros/test.md /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/any/install_drivers_note.md
+
+/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/libsqlx-1572dc1afd300a27.rmeta: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/lib.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/any/mod.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/macros/mod.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/ty_match.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/lib.md /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/macros/test.md /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/any/install_drivers_note.md
+
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/lib.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/any/mod.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/macros/mod.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/ty_match.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/lib.md:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/macros/test.md:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-0.7.4/src/any/install_drivers_note.md:

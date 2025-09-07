@@ -1,0 +1,10 @@
+/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/sqlformat-c2bbec1dedb292e9.d: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/lib.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/formatter.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/indentation.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/inline_block.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/params.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/tokenizer.rs
+
+/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/libsqlformat-c2bbec1dedb292e9.rmeta: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/lib.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/formatter.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/indentation.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/inline_block.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/params.rs /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/tokenizer.rs
+
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/lib.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/formatter.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/indentation.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/inline_block.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/params.rs:
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlformat-0.2.6/src/tokenizer.rs:

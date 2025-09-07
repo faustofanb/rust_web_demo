@@ -1,0 +1,5 @@
+/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/sqlx_macros-eb2dd9f5b24bcadf.d: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-macros-0.7.4/src/lib.rs
+
+/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/libsqlx_macros-eb2dd9f5b24bcadf.dylib: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-macros-0.7.4/src/lib.rs
+
+/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sqlx-macros-0.7.4/src/lib.rs:
