@@ -1,7 +1,0 @@
-/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/sct-3ef466bb3fcfe341.d: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sct-0.7.1/src/lib.rs
-
-/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/libsct-3ef466bb3fcfe341.rlib: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sct-0.7.1/src/lib.rs
-
-/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/deps/libsct-3ef466bb3fcfe341.rmeta: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sct-0.7.1/src/lib.rs
-
-/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/sct-0.7.1/src/lib.rs:

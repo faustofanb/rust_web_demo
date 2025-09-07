@@ -1,2 +1,0 @@
-fn(axum::extract::State<AppState>, axum::Json<RegisterUserRequest>) -> impl std::future::Future<Output = Result<(StatusCode, axum::Json<RegisterUserResponse>), AppError>> {register_user}
-fn(axum::extract::State<AppState>, axum::Json<RegisterUserRequest>) -> impl std::future::Future<Output = Result<(StatusCode, axum::Json<RegisterUserResponse>), AppError>> {register_user}: Handler<_, _>
