@@ -1,7 +1,7 @@
 use iam_core::{
-    application::services::UserService,
+    application::services::{UserService, QueryService},
     config::AppConfig,
-    infrastructure::persistence::{EventStore, SqlxEventStore},
+    infrastructure::persistence::SqlxEventStore,
     interface::{middleware::AppState, routes::create_router},
 };
 use sea_orm::Database;
@@ -41,9 +41,11 @@ async fn main() -> anyhow::Result<()> {
     // 初始化服务
     let event_store = Arc::new(SqlxEventStore::new(pool.clone()));
     let user_service = Arc::new(UserService::new(event_store.clone()));
+    let query_service = Arc::new(QueryService::new(db_conn));
+    let config = Arc::new(config);
 
     // 创建应用状态
-    let app_state = AppState::new(user_service, event_store);
+    let app_state = AppState::new(user_service, query_service, event_store, config.clone());
 
     // 创建路由
     let app = create_router(app_state).layer(CorsLayer::permissive());

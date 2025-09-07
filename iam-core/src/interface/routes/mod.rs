@@ -2,15 +2,22 @@ use axum::{
     routing::{get, post},
     Router,
 };
+use utoipa_swagger_ui::SwaggerUi;
+use utoipa::OpenApi;
 
 use crate::interface::handlers::{auth_handler, user_handler};
 use crate::interface::middleware::AppState;
+use crate::openapi::{ApiDoc, health_check};
 
 /// 创建应用程序路由
 pub fn create_router(state: AppState) -> Router {
     Router::new()
         .route("/health", get(health_check))
         .nest("/api/v1", create_api_routes())
+        .merge(
+            SwaggerUi::new("/swagger-ui")
+                .url("/api-docs/openapi.json", ApiDoc::openapi())
+        )
         .with_state(state)
 }
 
@@ -37,7 +44,4 @@ fn create_user_routes() -> Router<AppState> {
         .route("/:id", get(user_handler::get_user))
 }
 
-/// 健康检查端点
-async fn health_check() -> &'static str {
-    "OK"
-}
+// 健康检查端点现在在 openapi 模块中定义

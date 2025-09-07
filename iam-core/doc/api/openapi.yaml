@@ -1,0 +1,306 @@
+openapi: 3.0.3
+info:
+  title: IAM Core API
+  description: 身份与访问管理核心系统 API 文档
+  contact:
+    name: IAM Core Team
+    email: team@iamcore.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  version: 0.1.0
+servers:
+- url: http://localhost:3000
+  description: 开发环境
+- url: https://api.iamcore.com
+  description: 生产环境
+paths:
+  /api/v1/auth/login:
+    post:
+      tags:
+      - auth
+      summary: 用户登录
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+        required: true
+      responses:
+        '200':
+          description: 登录成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '400':
+          description: 请求参数错误
+        '401':
+          description: 用户名或密码错误
+        '500':
+          description: 服务器内部错误
+  /api/v1/auth/logout:
+    post:
+      tags:
+      - auth
+      summary: 用户登出
+      operationId: logout
+      responses:
+        '200':
+          description: 登出成功
+        '401':
+          description: 未认证
+        '500':
+          description: 服务器内部错误
+  /api/v1/auth/refresh:
+    post:
+      tags:
+      - auth
+      summary: 刷新token
+      operationId: refresh_token
+      responses:
+        '200':
+          description: 令牌刷新成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          description: 无效的令牌
+        '500':
+          description: 服务器内部错误
+  /api/v1/users:
+    get:
+      tags:
+      - users
+      summary: 获取用户列表
+      operationId: list_users
+      responses:
+        '200':
+          description: 获取用户列表成功
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserResponse'
+        '401':
+          description: 未认证
+        '403':
+          description: 无权限
+        '500':
+          description: 服务器内部错误
+    post:
+      tags:
+      - users
+      summary: 注册新用户
+      operationId: register_user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterUserRequest'
+        required: true
+      responses:
+        '201':
+          description: 用户注册成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegisterUserResponse'
+        '400':
+          description: 请求参数错误
+        '409':
+          description: 用户名或邮箱已存在
+        '500':
+          description: 服务器内部错误
+  /api/v1/users/{user_id}:
+    get:
+      tags:
+      - users
+      summary: 根据ID获取用户信息
+      operationId: get_user
+      parameters:
+      - name: user_id
+        in: path
+        description: 用户ID
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: 获取用户信息成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '401':
+          description: 未认证
+        '403':
+          description: 无权限
+        '404':
+          description: 用户不存在
+        '500':
+          description: 服务器内部错误
+  /health:
+    get:
+      tags:
+      - system
+      summary: 健康检查端点
+      operationId: health_check
+      responses:
+        '200':
+          description: 服务健康
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      description: 错误响应
+      required:
+      - error
+      - status
+      properties:
+        details:
+          description: 详细信息
+          nullable: true
+        error:
+          type: string
+          description: 错误信息
+        status:
+          type: integer
+          format: int32
+          description: HTTP 状态码
+          minimum: 0
+    HealthResponse:
+      type: object
+      description: 健康检查响应
+      required:
+      - status
+      - timestamp
+      - version
+      - environment
+      properties:
+        environment:
+          type: string
+          description: 环境
+        status:
+          type: string
+          description: 服务状态
+        timestamp:
+          type: string
+          description: 时间戳
+        version:
+          type: string
+          description: 版本号
+    LoginRequest:
+      type: object
+      required:
+      - username
+      - password
+      properties:
+        password:
+          type: string
+          description: 密码
+        username:
+          type: string
+          description: 用户名
+    LoginResponse:
+      type: object
+      required:
+      - access_token
+      - token_type
+      - expires_in
+      properties:
+        access_token:
+          type: string
+          description: 访问令牌
+        expires_in:
+          type: integer
+          format: int64
+          description: 过期时间（秒）
+          minimum: 0
+        token_type:
+          type: string
+          description: 令牌类型
+    RegisterUserRequest:
+      type: object
+      required:
+      - username
+      - email
+      - password
+      properties:
+        email:
+          type: string
+          description: 邮箱地址
+        password:
+          type: string
+          description: 密码，至少8个字符
+        username:
+          type: string
+          description: 用户名，3-50个字符
+    RegisterUserResponse:
+      type: object
+      required:
+      - user_id
+      - message
+      properties:
+        message:
+          type: string
+          description: 响应消息
+        user_id:
+          type: string
+          format: uuid
+          description: 用户ID
+    TokenInfo:
+      type: object
+      required:
+      - user_id
+      - username
+      - exp
+      properties:
+        exp:
+          type: integer
+          format: int64
+          description: 过期时间戳
+          minimum: 0
+        user_id:
+          type: string
+          description: 用户ID
+        username:
+          type: string
+          description: 用户名
+    UserResponse:
+      type: object
+      required:
+      - id
+      - username
+      - email
+      - created_at
+      properties:
+        created_at:
+          type: string
+          format: date-time
+          description: 创建时间
+        email:
+          type: string
+          description: 邮箱地址
+        id:
+          type: string
+          format: uuid
+          description: 用户ID
+        username:
+          type: string
+          description: 用户名
+tags:
+- name: users
+  description: 用户管理相关接口
+- name: auth
+  description: 认证相关接口
+- name: system
+  description: 系统相关接口

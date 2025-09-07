@@ -1,0 +1,103 @@
+version: '3.8'
+
+services:
+  # MySQL数据库
+  mysql:
+    image: mysql:lts
+    container_name: iam-core-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456  # 生产环境请使用强密码
+      # - MYSQL_ROOT_HOST=%
+      # - MYSQL_DATABASE=nacos     # 默认创建的数据库名
+      - TZ=Asia/Shanghai
+    command:
+      - "--character-set-server=utf8mb4"
+      - "--collation-server=utf8mb4_general_ci"
+      - "--explicit_defaults_for_timestamp=true"
+      - "--lower_case_table_names=1"
+      - "--server-id=1"
+      # - "--log-bin=mysql-bin"
+      # - "--binlog-format=ROW"
+      - "--mysql_native_password=ON"
+      # - "--default-authentication-plugin=mysql_native_password"
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql  # 数据持久化
+      - ./docker/mysql/conf:/etc/mysql/conf.d  # 自定义配置文件
+      - ./docker/mysql/init/:/docker-entrypoint-initdb.d  # 初始化SQL脚本
+    # MySQL资源限制
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+    networks:
+      iam-network:
+        # ipv4_address: 172.30.0.53
+
+  # Redis缓存
+  redis:
+    image: redis:7-alpine
+    container_name: iam-core-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - iam-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      timeout: 3s
+      retries: 5
+
+  # IAM Core应用
+  iam-core:
+    build: .
+    container_name: iam-core-app
+    environment:
+      - DATABASE_URL=mysql://iamuser:iampassword@mysql:3306/iam_core
+      - SERVER_HOST=0.0.0.0
+      - SERVER_PORT=3000
+      - JWT_SECRET=your-super-secret-jwt-key-change-in-production
+      - JWT_EXPIRATION_HOURS=24
+      - ENVIRONMENT=development
+      - RUST_LOG=debug
+    ports:
+      - "3000:3000"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - iam-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  # Nginx反向代理（可选）
+  nginx:
+    image: nginx:alpine
+    container_name: iam-core-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./docker/nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - iam-core
+    networks:
+      - iam-network
+
+volumes:
+  mysql_data:
+  redis_data:
+
+networks:
+  iam-network:
+    driver: bridge
