@@ -12,7 +12,12 @@ impl UserRepository {
         Self { pool }
     }
 
-    pub async fn create(&self, username: &str, email: &str, password_hash: &str) -> AppResult<User> {
+    pub async fn create(
+        &self,
+        username: &str,
+        email: &str,
+        password_hash: &str,
+    ) -> AppResult<User> {
         let result = sqlx::query!(
             r#"
             INSERT INTO users (username, email, password_hash)
@@ -25,8 +30,12 @@ impl UserRepository {
         .execute(&self.pool)
         .await?;
 
-        let user = self.find_by_id(result.last_insert_id() as i64).await?
-            .ok_or(AppError::Internal(anyhow::anyhow!("创建用户后无法找到用户")))?;
+        let user = self
+            .find_by_id(result.last_insert_id() as i64)
+            .await?
+            .ok_or(AppError::Internal(anyhow::anyhow!(
+                "创建用户后无法找到用户"
+            )))?;
 
         Ok(user)
     }
@@ -79,7 +88,12 @@ impl UserRepository {
         Ok(user)
     }
 
-    pub async fn update(&self, id: i64, username: Option<&str>, email: Option<&str>) -> AppResult<User> {
+    pub async fn update(
+        &self,
+        id: i64,
+        username: Option<&str>,
+        email: Option<&str>,
+    ) -> AppResult<User> {
         if let Some(username) = username {
             sqlx::query!(
                 r#"
@@ -107,9 +121,7 @@ impl UserRepository {
         }
 
         // 返回更新后的用户
-        self.find_by_id(id)
-            .await?
-            .ok_or(AppError::UserNotFound)
+        self.find_by_id(id).await?.ok_or(AppError::UserNotFound)
     }
 
     pub async fn delete(&self, id: i64) -> AppResult<()> {

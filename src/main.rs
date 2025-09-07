@@ -1,10 +1,5 @@
 // 使用lib.rs中定义的模块
-use rust_web_demo::{
-    AppConfig,
-    AppState,
-    create_router,
-    init_tracing,
-};
+use rust_web_demo::{create_router, init_tracing, AppConfig, AppState};
 
 use std::net::SocketAddr;
 

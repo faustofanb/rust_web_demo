@@ -40,27 +40,25 @@ impl AppConfig {
         let database_url = env::var("DATABASE_URL")
             .unwrap_or_else(|_| "mysql://root:password@localhost:3306/rust_web_demo".to_string());
 
-        let server_host = env::var("SERVER_HOST")
-            .unwrap_or_else(|_| "0.0.0.0".to_string());
+        let server_host = env::var("SERVER_HOST").unwrap_or_else(|_| "0.0.0.0".to_string());
 
         let server_port = env::var("SERVER_PORT")
             .unwrap_or_else(|_| "3000".to_string())
             .parse::<u16>()
             .map_err(|_| config::ConfigError::Message("Invalid SERVER_PORT".to_string()))?;
 
-        let redis_url = env::var("REDIS_URL")
-            .unwrap_or_else(|_| "redis://localhost:6379".to_string());
+        let redis_url =
+            env::var("REDIS_URL").unwrap_or_else(|_| "redis://localhost:6379".to_string());
 
-        let jwt_secret = env::var("JWT_SECRET")
-            .unwrap_or_else(|_| "your-super-secret-jwt-key-here".to_string());
+        let jwt_secret =
+            env::var("JWT_SECRET").unwrap_or_else(|_| "your-super-secret-jwt-key-here".to_string());
 
         let jwt_expiration = env::var("JWT_EXPIRATION")
             .unwrap_or_else(|_| "3600".to_string())
             .parse::<u64>()
             .map_err(|_| config::ConfigError::Message("Invalid JWT_EXPIRATION".to_string()))?;
 
-        let environment = env::var("ENVIRONMENT")
-            .unwrap_or_else(|_| "development".to_string());
+        let environment = env::var("ENVIRONMENT").unwrap_or_else(|_| "development".to_string());
 
         Ok(AppConfig {
             database: DatabaseConfig { url: database_url },

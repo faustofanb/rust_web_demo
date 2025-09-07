@@ -16,7 +16,8 @@ pub async fn register(
     // 验证请求参数
     request.validate()?;
 
-    let user = app_state.auth_service
+    let user = app_state
+        .auth_service
         .register(&request.username, &request.email, &request.password)
         .await?;
 

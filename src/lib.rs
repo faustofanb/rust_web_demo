@@ -18,7 +18,7 @@ use crate::{
     services::{AuthService, UserService},
 };
 use axum::{
-    routing::{get, post, put, delete},
+    routing::{delete, get, post, put},
     Router,
 };
 use sqlx::MySqlPool;
@@ -26,8 +26,8 @@ use tower::ServiceBuilder;
 use tower_http::trace::TraceLayer;
 
 // 重新导出常用的类型
-pub use errors::{AppError, AppResult};
 pub use config::AppConfig;
+pub use errors::{AppError, AppResult};
 
 // 应用状态
 #[derive(Clone)]
@@ -71,24 +71,21 @@ pub fn create_router(app_state: AppState) -> Router {
         // 健康检查
         .route("/health", get(health_check))
         .route("/ready", get(readiness_check))
-
         // 认证路由
         .route("/api/auth/register", post(register))
         .route("/api/auth/login", post(login))
         .route("/api/auth/me", post(me))
-
         // 用户管理路由
         .route("/api/users", post(create_user))
         .route("/api/users", get(list_users))
         .route("/api/users/:id", get(get_user))
         .route("/api/users/:id", put(update_user))
         .route("/api/users/:id", delete(delete_user))
-
         // 中间件
         .layer(
             ServiceBuilder::new()
                 .layer(TraceLayer::new_for_http())
-                .layer(cors_layer())
+                .layer(cors_layer()),
         )
         .with_state(app_state)
 }

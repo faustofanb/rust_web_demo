@@ -1,8 +1,8 @@
 use crate::errors::{AppError, AppResult};
 use crate::models::{LoginRequest, LoginResponse, User, UserResponse};
 use crate::repositories::UserRepository;
-use argon2::{Argon2, PasswordHash, PasswordHasher, PasswordVerifier};
 use argon2::password_hash::{rand_core::OsRng, SaltString};
+use argon2::{Argon2, PasswordHash, PasswordHasher, PasswordVerifier};
 use jsonwebtoken::{decode, encode, Algorithm, DecodingKey, EncodingKey, Header, Validation};
 use serde::{Deserialize, Serialize};
 use std::time::{SystemTime, UNIX_EPOCH};
@@ -34,7 +34,7 @@ impl AuthService {
     pub fn hash_password(&self, password: &str) -> AppResult<String> {
         let salt = SaltString::generate(&mut OsRng);
         let argon2 = Argon2::default();
-        
+
         let password_hash = argon2
             .hash_password(password.as_bytes(), &salt)
             .map_err(|e| AppError::Internal(anyhow::anyhow!("密码哈希失败: {}", e)))?;
@@ -47,7 +47,9 @@ impl AuthService {
             .map_err(|e| AppError::Internal(anyhow::anyhow!("密码哈希解析失败: {}", e)))?;
 
         let argon2 = Argon2::default();
-        Ok(argon2.verify_password(password.as_bytes(), &parsed_hash).is_ok())
+        Ok(argon2
+            .verify_password(password.as_bytes(), &parsed_hash)
+            .is_ok())
     }
 
     pub fn generate_token(&self, user: &User) -> AppResult<String> {
@@ -82,9 +84,19 @@ impl AuthService {
         Ok(token_data.claims)
     }
 
-    pub async fn register(&self, username: &str, email: &str, password: &str) -> AppResult<UserResponse> {
+    pub async fn register(
+        &self,
+        username: &str,
+        email: &str,
+        password: &str,
+    ) -> AppResult<UserResponse> {
         // 检查用户名是否已存在
-        if self.user_repository.find_by_username(username).await?.is_some() {
+        if self
+            .user_repository
+            .find_by_username(username)
+            .await?
+            .is_some()
+        {
             return Err(AppError::Internal(anyhow::anyhow!("用户名已存在")));
         }
 
@@ -97,14 +109,18 @@ impl AuthService {
         let password_hash = self.hash_password(password)?;
 
         // 创建用户
-        let user = self.user_repository.create(username, email, &password_hash).await?;
+        let user = self
+            .user_repository
+            .create(username, email, &password_hash)
+            .await?;
 
         Ok(UserResponse::from(user))
     }
 
     pub async fn login(&self, request: LoginRequest) -> AppResult<LoginResponse> {
         // 查找用户
-        let user = self.user_repository
+        let user = self
+            .user_repository
             .find_by_username(&request.username)
             .await?
             .ok_or(AppError::AuthenticationFailed)?;
@@ -125,8 +141,9 @@ impl AuthService {
 
     pub async fn get_user_from_token(&self, token: &str) -> AppResult<UserResponse> {
         let claims = self.verify_token(token)?;
-        
-        let user = self.user_repository
+
+        let user = self
+            .user_repository
             .find_by_id(claims.sub.parse::<i64>().unwrap())
             .await?
             .ok_or(AppError::AuthenticationFailed)?;

@@ -52,7 +52,8 @@ pub async fn list_users(
     State(app_state): State<AppState>,
     Query(params): Query<ListUsersQuery>,
 ) -> AppResult<Json<ListUsersResponse>> {
-    let users = app_state.user_service
+    let users = app_state
+        .user_service
         .list_users(params.limit, params.offset)
         .await?;
 
@@ -74,7 +75,10 @@ pub async fn update_user(
     let username = payload.get("username").map(|s| s.clone());
     let email = payload.get("email").map(|s| s.clone());
 
-    let user = app_state.user_service.update_user(id, username, email).await?;
+    let user = app_state
+        .user_service
+        .update_user(id, username, email)
+        .await?;
 
     Ok(Json(user))
 }

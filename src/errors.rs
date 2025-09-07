@@ -16,28 +16,28 @@ pub enum AppError {
 
     #[error("配置错误: {0}")]
     Config(#[from] config::ConfigError),
-    
+
     #[error("Redis错误: {0}")]
     Redis(#[from] redis::RedisError),
-    
+
     #[error("JWT错误: {0}")]
     Jwt(#[from] jsonwebtoken::errors::Error),
-    
+
     #[error("验证错误: {0}")]
     Validation(#[from] validator::ValidationErrors),
-    
+
     #[error("HTTP客户端错误: {0}")]
     Http(#[from] reqwest::Error),
-    
+
     #[error("用户未找到")]
     UserNotFound,
-    
+
     #[error("认证失败")]
     AuthenticationFailed,
-    
+
     #[error("权限不足")]
     InsufficientPermissions,
-    
+
     #[error("内部服务器错误: {0}")]
     Internal(#[from] anyhow::Error),
 }

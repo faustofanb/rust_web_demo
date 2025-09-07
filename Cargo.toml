@@ -3,6 +3,11 @@ name = "rust-web-demo"
 version = "0.1.0"
 edition = "2021"
 
+#[workspace]
+#members = [
+#    "iam-core",
+#]
+
 [dependencies]
 # Web框架
 axum = "0.7"
@@ -10,7 +15,6 @@ tokio = { version = "1.0", features = ["full"] }
 
 # 数据库 - MySQL版本
 sqlx = { version = "0.7", features = ["mysql", "runtime-tokio-rustls", "macros", "time"] }
-sqlx-cli = "0.7"
 
 # HTTP客户端
 reqwest = { version = "0.11", features = ["json", "rustls-tls"] }
