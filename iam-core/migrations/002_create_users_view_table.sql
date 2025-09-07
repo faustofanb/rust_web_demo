@@ -1,5 +1,5 @@
 -- 创建用户读模型表
-CREATE TABLE users_view (
+CREATE TABLE IF NOT EXISTS users_view (
     id BINARY(16) PRIMARY KEY,
     tenant_id BINARY(16) NOT NULL,
     username VARCHAR(255) NOT NULL,

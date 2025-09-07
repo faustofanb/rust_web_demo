@@ -1,5 +1,5 @@
 -- 创建租户表
-CREATE TABLE tenants (
+CREATE TABLE IF NOT EXISTS tenants (
     id BINARY(16) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     code VARCHAR(100) NOT NULL UNIQUE,

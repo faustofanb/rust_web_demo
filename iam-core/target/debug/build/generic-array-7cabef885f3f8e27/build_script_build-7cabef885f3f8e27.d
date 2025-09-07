@@ -1,5 +1,0 @@
-/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/build/generic-array-7cabef885f3f8e27/build_script_build-7cabef885f3f8e27.d: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/generic-array-0.14.7/build.rs
-
-/Users/fausto/Desktop/work/project/rust/iam-core/target/debug/build/generic-array-7cabef885f3f8e27/build_script_build-7cabef885f3f8e27: /Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/generic-array-0.14.7/build.rs
-
-/Users/fausto/.cargo/registry/src/mirrors.ustc.edu.cn-5857e57f01837ef8/generic-array-0.14.7/build.rs:

@@ -1,5 +1,5 @@
 -- 创建事件存储表
-CREATE TABLE events (
+CREATE TABLE IF NOT EXISTS events (
     id BINARY(16) PRIMARY KEY,
     aggregate_id BINARY(16) NOT NULL,
     sequence BIGINT UNSIGNED NOT NULL,
